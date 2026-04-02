@@ -1,0 +1,18 @@
+public class EvenNumber {
+
+    public static void checkEvenNumber(int number) {
+        if (number % 2 == 0 && number > 0) {
+            System.out.println("Положительное четное число");
+        } else if (number % 2 != 0 && number > 0) {
+            System.out.println("Положительное нечетное  число");
+        } else if (number < 0) {
+            System.out.println("Отрицательное число");
+        } else {
+            System.out.println("Ноль");
+        }
+    }
+
+    public static void main(String[] args) {
+        checkEvenNumber(10);
+    }
+}
