@@ -1,0 +1,23 @@
+import java.util.Random;
+
+public class testMonth {
+    public static int randomMonth() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(23);
+        return randomNumber;
+    }
+
+    public static void main(String[] args) {
+        int randomNumber = randomMonth();
+        System.out.println(randomNumber);
+        if (randomNumber >= 0 && randomNumber <= 5) {
+            System.out.println("Ночь");
+        } else if (randomNumber >= 6 && randomNumber <= 11) {
+            System.out.println("Утро");
+        } else if (randomNumber >= 12 && randomNumber <= 17) {
+            System.out.println("День");
+        } else {
+            System.out.println("Вечер");
+        }
+    }
+}
