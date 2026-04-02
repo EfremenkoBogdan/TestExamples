@@ -1,0 +1,12 @@
+public class LeapYear {
+    public static void checkLeapYear (int year) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println("Високосный год");
+        } else {
+            System.out.println("Не високосный год");
+        }
+    }
+     public static void main(String[] args){
+    checkLeapYear(2000);
+}
+}
