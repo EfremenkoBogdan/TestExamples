@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class ArrayTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите размер массива: ");
+        int size = scanner.nextInt();
+
+        int[] data = new int[size];
+        System.out.println("Введите элементы массива:");
+        for (int i = 0; i < size; i++) {
+            data[i] = scanner.nextInt();
+        }
+
+
+        // int[] data = {5, -2, 8, 0, 3, -7, 12, 4};
+        System.out.print("Исходный массив: ");
+        printArray(data);
+        System.out.println();
+        System.out.print("Обратный порядок: ");
+        int[] reversed = arrayRevert(data);
+        printArray(reversed);
+
+        double avg = average(data);
+        System.out.println();
+        System.out.println("Среднее арифметическое: " + avg);
+
+        int[] evenArray = getEvenArray(data);
+        System.out.print("Четные элементы: ");
+        printArray(evenArray);
+        scanner.close();
+    }
+
+    public static int[] arrayRevert(int[] array) {
+        int[] reverseArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            reverseArray[i] = array[array.length - 1 - i];
+        }
+        return reverseArray;
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static double average(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum = sum + array[i];
+        }
+        return (double) sum / array.length;
+    }
+
+    public static int[] getEvenArray(int[] array) {
+        int count = 0;
+        for (int num : array) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }
+
+        int[] result = new int[count];
+        int index = 0;
+        for (int num : array) {
+
+            if (num % 2 == 0) {
+                result[index] = num;
+                index++;
+            }
+        }
+
+        return result;
+    }
+}
