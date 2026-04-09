@@ -1,0 +1,33 @@
+
+void main() {
+    String[] fruits = {"apple", "banana", "kiwi", "pomegranate"};
+    analyzeStrings(fruits);
+}
+
+public void analyzeStrings(String[] arr) {
+    String longest = arr[0];
+    String shortest = arr[0];
+    int total = 0;
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i].length() > longest.length()) {
+            longest = arr[i];
+        }
+
+    }
+
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i].length() < shortest.length()) {
+            shortest = arr[i];
+        }
+
+    }
+
+    for (int i = 0; i < arr.length; i++) {
+        total += arr[i].length();
+
+    }
+
+    System.out.println(longest + " Длинное");
+    System.out.println(shortest + " Короткое");
+    System.out.println(total + " Итог");
+}
